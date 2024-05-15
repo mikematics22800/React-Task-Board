@@ -1,3 +1,87 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.task-board {
+  @apply w-screen h-screen flex flex-col
+}
+
+header {
+  @apply w-full flex items-center justify-center h-36 border-b-4 border-b-gray-400
+}
+
+input {
+  @apply shadow-lg p-2 rounded-sm outline-none w-80 duration-200
+}
+
+textarea {
+  @apply outline-none rounded-sm resize-none p-2 h-96 w-full shadow-lg
+}
+
+input:focus, textarea:focus {
+  @apply focus:outline-blue-600
+}
+
+button {
+  @apply bg-green-600 py-4 px-8 rounded-xl text-white text-xl font-bold
+}
+
+header h1 {
+  @apply font-bold text-4xl
+}
+
+@-webkit-keyframes slide-in {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes slide-in {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+.modal-container {
+  -webkit-animation-name: slide-in;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slide-in;
+  animation-duration: 0.4s;
+  @apply w-full flex justify-center fixed top-0 z-50
+}
+
+.modal {
+  @apply w-[800px] flex flex-col items-center p-10 rounded-lg shadow-lg bg-gray-100 gap-10
+}
+
+.modal header {
+  @apply flex justify-between items-center w-full border-b-2 border-b-gray-400
+}
+
+.modal header div {
+  @apply w-16 h-16 flex justify-center items-center rounded-full cursor-pointer duration-200
+}
+
+.modal header div:hover {
+  @apply bg-gray-400
+}
+
+.title-due-date {
+  @apply flex justify-between w-full
+}
+
+.modal img {
+  @apply w-8
+}
+
+
+.modal h2 {
+  @apply mb-2 font-bold text-lg
+}
+
+.description {
+  @apply w-full
+}
+
+.columns {
+  @apply flex flex-col items-center
+}
+
