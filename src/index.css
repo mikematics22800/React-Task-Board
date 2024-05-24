@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .task-board {
   @apply w-screen h-screen flex flex-col
 }
@@ -22,7 +26,7 @@ input:focus, textarea:focus {
   @apply focus:outline-blue-600
 }
 
-button {
+.modal button, .content button {
   @apply bg-green-600 py-4 px-8 rounded-xl text-white text-xl font-bold
 }
 
@@ -81,7 +85,54 @@ header h1 {
   @apply w-full
 }
 
-.columns {
-  @apply flex flex-col items-center
+.content {
+  @apply flex flex-col items-center p-10
 }
 
+.columns {
+  @apply flex flex-col lg:flex-row justify-center items-center mt-10 w-[1200px] gap-10
+}
+
+.column {
+  @apply w-[600px] lg:w-96
+}
+
+.column ul {
+  @apply shadow-lg rounded-lg lg:w-96 w-full lg:h-[600px] h-36 overflow-auto
+}
+
+.columns header {
+  @apply w-full flex items-center justify-center h-20 bg-gray-200 rounded-t-xl
+}
+
+.column ul {
+  @apply w-full flex flex-col items-center gap-10 p-10 
+}
+
+.task {
+  @apply w-72 flex flex-col items-center text-lg shadow-lg rounded-xl text-white font-bold gap-5 pb-5 cursor-pointer
+}
+
+.task h1 {
+  @apply w-full flex justify-center items-center h-16 bg-white bg-opacity-20 text-2xl
+}
+
+.task button {
+  @apply bg-red-600 py-3 px-6 rounded-xl border-white border-2 duration-200
+}
+
+.task button:hover {
+  @apply bg-white text-red-600
+}
+
+.past-due {
+  @apply bg-red-600
+}
+
+.due-today {
+  @apply bg-yellow-400
+}
+
+.due-in-future {
+  @apply bg-green-600
+}
